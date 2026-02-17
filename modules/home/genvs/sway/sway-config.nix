@@ -17,7 +17,6 @@
         { command = "swaymsg workspace number 1"; }
         { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.jpg"; }
         { command = "autotiling-rs"; }
-        { command = "zen-twilight"; }
       ];
 
       bars = [ ];
@@ -45,7 +44,7 @@
           "${mod}+Space" = "exec wofi";
 
           "${mod}+a" = "exec kitty yazi";
-          "${mod}+e" = "exec kitty nvim";
+          "${mod}+e" = "exec emacs";
           "${mod}+f" = "exec firefox";
           "${mod}+t" = "exec kitty";
           "${mod}+o" = "exec obsidian";
@@ -83,6 +82,17 @@
           "${act}+8" = "workspace number 8";
           "${act}+9" = "workspace number 9";
           "${act}+0" = "workspace number 10";
+
+          "${act}+Shift+1" = "move container to workspace number 1";
+          "${act}+Shift+2" = "move container to workspace number 2";
+          "${act}+Shift+3" = "move container to workspace number 3";
+          "${act}+Shift+4" = "move container to workspace number 4";
+          "${act}+Shift+5" = "move container to workspace number 5";
+          "${act}+Shift+6" = "move container to workspace number 6";
+          "${act}+Shift+7" = "move container to workspace number 7";
+          "${act}+Shift+8" = "move container to workspace number 8";
+          "${act}+Shift+9" = "move container to workspace number 9";
+          "${act}+Shift+0" = "move container to workspace number 10";
 
           "${act}+F1" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%";
           "${act}+F2" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";

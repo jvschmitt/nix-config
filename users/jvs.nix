@@ -13,6 +13,8 @@
       "wheel"
       "users"
       "video"
+      "plugdev"
+      "dialout"
     ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
     shell = pkgs.bash;

@@ -123,7 +123,6 @@
             timezone
             xdg
             qt
-            steam
             xserver
             security
             nvidia-nouveau

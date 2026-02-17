@@ -53,9 +53,9 @@
     gpa
 
     # Jogos
-    lutris
-    prismlauncher
-    r2modman
+    #lutris
+    #prismlauncher
+    #r2modman
     #lumafly
     #ckan
 
@@ -80,6 +80,7 @@
     #openjfx8
     webkitgtk_6_0
     git
+    probe-rs-tools
     rustup
     rustc
     cargo
