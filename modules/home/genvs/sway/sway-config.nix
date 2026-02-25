@@ -55,8 +55,6 @@
           "${act}+x" = "kill";
           "${act}+f" = "fullscreen";
 
-          "${act}+c" = "sticky toggle";
-
           "${act}+a" = "focus left";
           "${act}+s" = "focus down";
           "${act}+w" = "focus up";
@@ -100,6 +98,9 @@
 
           "${act}+F6" = "exec brightnessctl set -- -10%";
           "${act}+F7" = "exec brightnessctl set -- +10%";
+
+          "${act}+F10" = "exec grim - | wl-copy --type image/png";
+          "${act}+Shift+F10" = ''exec grim -g "$(slurp)" - | wl-copy --type image/png'';
 
         };
 
