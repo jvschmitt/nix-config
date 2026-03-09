@@ -23,6 +23,7 @@
     winetricks
 
     inputs.zen-browser.packages."${system}".twilight
+    signal-desktop
 
     # Terminal
     fastfetch
@@ -63,7 +64,7 @@
     # Produtividade
     obsidian
     anki-bin
-    libreoffice
+    #libreoffice
 
     # Dev
     arduino
