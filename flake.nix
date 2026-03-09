@@ -165,7 +165,7 @@
             io-utils
             tailscale-server
             minecraft-server
-            motion
+            #motion
             zerotier
             screen-off
             syncthing
