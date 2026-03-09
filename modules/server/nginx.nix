@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
 
-  webIndex = "index.php";
+  webIndex = "index.html";
 
 in
 {
