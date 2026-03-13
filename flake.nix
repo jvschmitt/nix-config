@@ -85,6 +85,7 @@
         sops = import ./modules/system/sops.nix;
 
         # System
+        bash = import ./modules/system/bash.nix;
         uwsm = import ./modules/system/uwsm.nix;
         grub = import ./modules/system/bootloaders/grub.nix;
         sddm = import ./modules/system/display-managers/sddm.nix;
@@ -121,6 +122,7 @@
             sddm
             uwsm
             sway
+            bash
             network
             grub
             timezone
@@ -157,6 +159,7 @@
             ./hosts/server/configuration.nix
             sops-nix.nixosModules.sops
             adguardhome
+            bash
             grub
             duckdns
             nginx
