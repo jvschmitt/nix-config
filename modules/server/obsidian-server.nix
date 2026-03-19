@@ -18,10 +18,8 @@ in
 
           cd ${dir}
 
-          yesterday_date = $(date -d "-1 day" +%Y%m%d)
-
           if [ -f ${tasks_file} ]; then
-             mv ${tasks_file} ./.history/tasks/tasks_"$yesterday_date".md
+             mv ${tasks_file} ./.history/tasks/tasks_"$(date -d "-1 day" +%Y-%m-%d)".md
           else
              generate_tasks_file ${tasks_file}
           fi
