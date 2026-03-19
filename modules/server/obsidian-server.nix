@@ -23,7 +23,7 @@ in
           if [ -f ${tasks_file} ]; then
              mv ${tasks_file} ./.history/tasks/tasks_"$yesterday_date".md
           else
-             generate_task_file ${tasks_file}
+             generate_tasks_file ${tasks_file}
           fi
 
           if [ -f ${tomorrow_tasks_file} ]; then
@@ -31,7 +31,7 @@ in
              generate_tasks_file ${tomorrow_tasks_file}
           fi
 
-          generate_task_file() {
+          generate_tasks_file() {
 
           cat > "$1" << 'EOF'
           Tarefas Primárias
