@@ -1,4 +1,11 @@
 { pkgs, username, ... }:
+let
+
+  dir = "/home/${username}/Documents/Obsidian";
+  tasks_file = "Tarefas.md";
+  tomorrow_tasks_file = "Tarefas de Amanhã.md";
+
+in
 {
   systemd = {
     services.obsidian-updater = {
@@ -9,21 +16,19 @@
         ExecStart = pkgs.writeShellScript "obsidian-updater" ''
           #!/bin/bash
 
-          cd /home/${username}/Documents/Obsidian
-          tasks_file = "Tarefas.md"
-          tomorrow_tasks_file = "Tarefas de Amanhã.md"
+          cd ${dir}
 
           yesterday_date = $(date -d "-1 day" +%Y%m%d)
 
-          if [ -f "$tasks_file" ]; then
-             mv "$tasks_file" ./.history/tasks/tasks_"$date".md
+          if [ -f ${tasks_file} ]; then
+             mv ${tasks_file} ./.history/tasks/tasks_"$yesterday_date".md
           else
-             generate_task_file("$task_file")
+             generate_task_file(${tasks_file})
           fi
 
-          if [ -f "$tomorrow_tasks_file" ]; then
-             mv "$tomorrow_tasks_file" "tasks_file"
-             generate_tasks_file("$tomorrow_tasks_file")
+          if [ -f "${tomorrow_tasks_file}" ]; then
+             mv ${tomorrow_tasks_file} ${tasks_file}
+             generate_tasks_file(${tomorrow_tasks_file})
           fi
 
           generate_task_file() {
@@ -42,7 +47,6 @@
           - [ ]
           - [ ]
           - [ ]
-
           EOF
 
           }
@@ -54,7 +58,7 @@
     timers.obsidian-updater = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* 11:45:00";
+        OnCalendar = "*-*-* 12:00:00";
         Persistant = true;
       };
     };
