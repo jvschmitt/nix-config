@@ -33,7 +33,7 @@ in
 
           generate_tasks_file() {
 
-          cat > "$1" << 'EOF'
+          cat > $1 << 'EOF'
           Tarefas Primárias
           - [ ]
           - [ ]
@@ -56,7 +56,7 @@ in
     timers.obsidian-updater = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* 12:18:00";
+        OnCalendar = "*-*-* 00:00:00";
         Persistant = true;
       };
     };
