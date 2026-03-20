@@ -16,21 +16,7 @@ in
         ExecStart = pkgs.writeShellScript "obsidian-updater" ''
           #!/bin/bash
 
-          cd ${dir}
-
-          if [ -f ${tasks_file} ]; then
-             mv ${tasks_file} ./.history/tasks/tasks_"$(date -d "-1 day" +%Y-%m-%d)".md
-          else
-             generate_tasks_file ${tasks_file}
-          fi
-
-          if [ -f ${tomorrow_tasks_file} ]; then
-             mv ${tomorrow_tasks_file} ${tasks_file}
-             generate_tasks_file ${tomorrow_tasks_file}
-          fi
-
           generate_tasks_file() {
-
           cat > $1 << 'EOF'
           Tarefas Primárias
           - [ ]
@@ -44,8 +30,22 @@ in
           - [ ]
           - [ ]
           EOF
-
           }
+
+          cd ${dir}
+
+          date_yesterday = date -d "-1 day" +%Y-%m-$d
+
+          if [ -f ${tasks_file} ]; then
+             mv ${tasks_file} ./.history/tasks/tasks_"$(date_yesterday)".md
+          else
+             generate_tasks_file ${tasks_file}
+          fi
+
+          if [ -f ${tomorrow_tasks_file} ]; then
+             mv ${tomorrow_tasks_file} ${tasks_file}
+             generate_tasks_file ${tomorrow_tasks_file}
+          fi
 
         '';
         User = "root";
