@@ -50,8 +50,7 @@ in
           fi
 
           if [ -f "tomorrow_tasks_file" ]; then
-             mv "{tomorrow_tasks_file}" "$tasks_file"
-             generate_tasks_file "$tomorrow_tasks_file"
+             mv "$tomorrow_tasks_file" "$tasks_file"
           fi
 
           if [ ! -f "tasks_file" ]; then
@@ -69,7 +68,7 @@ in
     timers.obsidian-updater = {
       wantedBy = [ "timers.target" ];
       timerConfig = {
-        OnCalendar = "*-*-* 00:00:00";
+        OnCalendar = "*-*-* 06:00:00";
         Persistant = true;
       };
     };
