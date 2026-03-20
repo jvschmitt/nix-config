@@ -36,7 +36,7 @@ in
           tasks_file_content="${tasks_file_content}";
 
           generate_tasks_file() {
-          cat > "$1" << 'EOF'
+          cat > "$1" << EOF
           $tasks_file_content
           EOF
           }
