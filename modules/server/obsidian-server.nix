@@ -49,6 +49,8 @@ in
           if [ -f "tomorrow_tasks_file" ]; then
              mv "{tomorrow_tasks_file}" "$tasks_file"
              generate_tasks_file "$tomorrow_tasks_file"
+          else
+             generate_tasks_file "$tomorrow_tasks_file"
           fi
 
         '';
