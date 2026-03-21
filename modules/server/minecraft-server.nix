@@ -15,6 +15,7 @@
       difficulty = 3;
       gamemode = 0;
       max-players = 10;
+      online-mode = false;
       motd = "Servidor NixOS de JVS";
       white-list = false;
       allow-cheats = false;
