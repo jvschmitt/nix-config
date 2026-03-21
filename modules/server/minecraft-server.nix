@@ -25,6 +25,10 @@
       level-name = "Anarquia";
       level-seed = "";
       spawn-protection = 0;
+
+      enable-rcon = true;
+      "rcon.port" = 25575;
+      "rcon.password" = builtins.readFile /data/rcon-passwd;
     };
     package = pkgs.papermc;
     dataDir = "/var/lib/minecraft";
@@ -67,7 +71,7 @@
 
   '';
   networking.firewall = {
-    allowedTCPPorts = [ ];
+    allowedTCPPorts = [ 25575 ];
     allowedUDPPorts = [ 24454 ]; # 24454: voicechat;
   };
 }
