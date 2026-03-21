@@ -26,9 +26,9 @@
       level-seed = "";
       spawn-protection = 0;
 
-      enable-rcon = true;
-      "rcon.port" = 25575;
-      "rcon.password" = builtins.readFile /data/rcon-passwd;
+      #enable-rcon = true;
+      #"rcon.port" = 25575;
+      #"rcon.password" = builtins.readFile /data/rcon-passwd;
     };
     package = pkgs.papermc;
     dataDir = "/var/lib/minecraft";
@@ -44,13 +44,13 @@
       fi
   */
 
-  environment.systemPackages = with pkgs; [ wget ];
-  systemd.services.minecraft-server.preStart = ''
+  environment.systempackages = with pkgs; [ wget ];
+  systemd.services.minecraft-server.prestart = ''
     cp -f ${
-      pkgs.runCommand "icon.png" { nativeBuildInputs = [ pkgs.imagemagick ]; } ''
+      pkgs.runcommand "icon.png" { nativebuildinputs = [ pkgs.imagemagick ]; } ''
         convert ${
           pkgs.fetchurl {
-            url = "https://minecraft.wiki/images/Book_and_Quill_JE2_BE2.png";
+            url = "https://minecraft.wiki/images/book_and_quill_je2_be2.png";
             sha256 = "0a3yb9wkqhmanm4zwz2bpgdl2aa8x7gd44wajl3ijrk97d0h8n92";
           }
         } -resize 64x64! $out
@@ -59,14 +59,14 @@
 
     mkdir -p /var/lib/minecraft/plugins
 
-    if [ ! -f /var/lib/minecraft/plugins/SkinsRestorer.jar ]; then
-    ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/SkinsRestorer.jar \
-        "https://cdn.modrinth.com/data/TsLS8Py5/versions/oiCdtX5p/SkinsRestorer.jar"
+    if [ ! -f /var/lib/minecraft/plugins/skinsrestorer.jar ]; then
+    ${pkgs.curl}/bin/curl -l -o /var/lib/minecraft/plugins/skinsrestorer.jar \
+        "https://cdn.modrinth.com/data/tsls8py5/versions/oicdtx5p/skinsrestorer.jar"
     fi
 
     if [ ! -f /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar ]; then
-    ${pkgs.curl}/bin/curl -L -o /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar \
-        "https://hangarcdn.papermc.io/plugins/henkelmax/SimpleVoiceChat/versions/bukkit-2.6.7/PAPER/voicechat-bukkit-2.6.7.jar"
+    ${pkgs.curl}/bin/curl -l -o /var/lib/minecraft/plugins/voicechat-bukkit-2.6.7.jar \
+        "https://hangarcdn.papermc.io/plugins/henkelmax/simplevoicechat/versions/bukkit-2.6.7/paper/voicechat-bukkit-2.6.7.jar"
     fi
 
   '';
