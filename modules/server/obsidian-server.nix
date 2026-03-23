@@ -7,16 +7,16 @@ let
 
   tasks_file_content = ''
     Tarefas Primárias
-    - [ ]
-    - [ ]
-    - [ ]
+    - [ ] 1:
+    - [ ] 2:
+    - [ ] 3:
 
     Tarefas Secundárias
-    - [ ]
-    - [ ]
-    - [ ]
-    - [ ]
-    - [ ]
+    - [ ] 1:
+    - [ ] 2:
+    - [ ] 3:
+    - [ ] 4:
+    - [ ] 5:
   '';
 
 in
