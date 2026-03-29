@@ -29,12 +29,9 @@ in
 
   services.dbus.enable = true;
 
-  programs = {
-    light.enable = true;
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
   };
 
 }
