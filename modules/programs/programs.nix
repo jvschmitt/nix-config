@@ -58,7 +58,7 @@
     protonup-ng
     prismlauncher
     r2modman
-    #lumafly
+    lumafly
     #ckan
 
     # Produtividade
@@ -89,6 +89,7 @@
     gcc
     scrcpy
     python3
+    python3Packages.matplotlib
     #android-tools
     #android-studio
     #jetbrains.idea-community-bin

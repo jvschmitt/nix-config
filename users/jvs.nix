@@ -15,6 +15,7 @@
       "video"
       "plugdev"
       "dialout"
+      "docker"
     ];
     hashedPasswordFile = config.sops.secrets.user-password.path;
     shell = pkgs.bash;

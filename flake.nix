@@ -172,7 +172,6 @@
             timezone
             #motion
             zerotier
-            obsidian-server
             screen-off
             syncthing
             user-jvs

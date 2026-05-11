@@ -17,6 +17,8 @@
         { command = "swaymsg workspace number 1"; }
         { command = "swaybg -i /home/jvs/nix-config/home/wallpaper.jpg"; }
         { command = "autotiling-rs"; }
+        #{ command = "obsidian /home/jvs/Documents/Obsidian/Tarefas.md"; }
+        #{ command = "zen-twilight"; }
       ];
 
       bars = [ ];

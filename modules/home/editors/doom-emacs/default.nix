@@ -8,6 +8,9 @@
     shellcheck
     fd
     shfmt
+
+    texlivePackages.abntex2
+
   ];
 
   programs.doom-emacs = {
