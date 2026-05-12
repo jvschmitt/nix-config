@@ -62,10 +62,12 @@
     "/home" = {
       device = "/data/home";
       options = [ "bind" ];
+      fsType = "ext4";
     };
     "/var/lib/minecraft" = {
       device = "/data/var/lib/minecraft";
       options = [ "bind" ];
+      fsType = "ext4";
     };
   };
 
